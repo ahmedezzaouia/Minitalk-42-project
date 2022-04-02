@@ -6,7 +6,7 @@
 /*   By: ahmez-za <ahmez-za@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 15:20:30 by ahmez-za          #+#    #+#             */
-/*   Updated: 2022/04/02 17:47:06 by ahmez-za         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:50:54 by ahmez-za         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	main(int ac, char **argv)
 	int	i;
 
 	i = 0;
-	else if (ac != 3)
+	if (ac != 3)
 		exit (EXIT_FAILURE);
-	else if (ac == 3)
+	else
 	{
 		pid = ft_atoi(argv[1]);
 		if (pid <= 0)
