@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahmez-za <ahmez-za@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 15:20:30 by ahmez-za          #+#    #+#             */
-/*   Updated: 2022/04/02 16:48:05 by ahmez-za         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:47:06 by ahmez-za         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,7 @@ int	main(int ac, char **argv)
 	int	i;
 
 	i = 0;
-	if (ac == 1)
-		exit (EXIT_FAILURE);
-	else if (ac == 2)
+	else if (ac != 3)
 		exit (EXIT_FAILURE);
 	else if (ac == 3)
 	{
@@ -80,7 +78,5 @@ int	main(int ac, char **argv)
 		while (argv[2][i])
 			send_char_bits(argv[2][i++], pid);
 	}
-	else
-		exit (EXIT_FAILURE);
 	exit (EXIT_SUCCESS);
 }
