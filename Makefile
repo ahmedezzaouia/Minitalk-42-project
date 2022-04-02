@@ -3,11 +3,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: server client
-	
+
+libprintf.a:
+	make -C ft_printf
+
 client: client.c
 	$(CC) $(CFLAGS) client.c -o client
 server: server.c
-	$(CC) $(CFLAGS) server.c -o server
+	$(CC) $(CFLAGS) server.c ft_putnbr_fd.c -o server 
 
 clean:
 	rm -f server client

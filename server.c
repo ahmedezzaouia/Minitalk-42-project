@@ -6,15 +6,16 @@
 /*   By: ahmez-za <ahmez-za@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 15:35:21 by ahmez-za          #+#    #+#             */
-/*   Updated: 2022/04/02 15:48:19 by ahmez-za         ###   ########.fr       */
+/*   Updated: 2022/04/02 16:17:03 by ahmez-za         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <signal.h>
 
-void	ft_putchar(char c)
+void	ft_putnbr_fd(int n, int fd);
+
+void	print_char(char c)
 {
 	write(1, &c, 1);
 }
@@ -51,7 +52,7 @@ void	convert_binary(char *char_binary)
 		}
 		j++;
 	}
-	ft_putchar(num);
+	print_char(num);
 }
 
 void	signal_hundler(int signalId)
@@ -73,7 +74,8 @@ void	signal_hundler(int signalId)
 
 int	main(void)
 {
-	printf("my id : %d\n", getpid());
+	write(1, "my Pid is : ", 15);
+	ft_putnbr_fd(getpid(), 1);
 	signal(SIGUSR1, signal_hundler);
 	signal(SIGUSR2, signal_hundler);
 	while (1)
